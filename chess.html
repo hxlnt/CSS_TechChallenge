@@ -7,18 +7,27 @@
             height: 100%;
             width: 100%;
             margin: 0;
-
             display: flex;
         }
+
+        .cell {
+            border: 1px solid green;
+        }
+        .cell.white {
+        background-color: white;
+    }
 
         .grid {
             background-color: lightgray;
             min-width: 350px;
             min-height: 350px;
-            max-width: 50%;
-            max-height: 50%;
-
+            max-width: 50vw;
+            max-height: 50vw;
+            border: 1px solid black;
             margin: auto;
+            display: grid;
+            grid-template-columns:  1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows:  1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         }
 
         .piece {
@@ -27,6 +36,75 @@
             height: 100%;
         }
 
+        .white,.black {
+            background-repeat: no-repeat;
+            background-size: contain;
+            /* background-position: center center; */
+        }
+
+        .king.white {
+            background-image: url('./img/wK.png');
+        }
+        .king.black {
+            background-image: url('./img/bK.png');
+        }
+        .queen.white {
+            background-image: url('./img/wQ.png');
+        }
+        .queen.black {
+            background-image: url('./img/bQ.png');
+        }
+        .pawn.white {
+            background-image: url('./img/wP.png');
+            transition-duration: 1s;
+        }
+        .pawn.black {
+            background-image: url('./img/bP.png');
+        }
+        .knight.white {
+            background-image: url('./img/wN.png');
+        }
+        .knight.black {
+            background-image: url('./img/bN.png');
+        }        
+        .bishop.white {
+            background-image: url('./img/wB.png');
+        }
+        .bishop.black {
+            background-image: url('./img/bB.png');
+        }
+
+        .rook.white {
+            background-image: url('./img/wR.png');
+        }
+        .rook.black {
+            background-image: url('./img/bR.png');
+        }   
+        .x0y6 div {
+            animation-name: example;
+            animation-duration: 1s;
+            animation-delay: 4s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+    @keyframes example {
+        to {
+            transform: translateY(calc(-50vw/8));}
+    }     
+
+        .pawn.white:hover {
+            transform: translateY(calc(50vw/8));
+        }
+
+        @media screen and (orientation: portrait) {
+    .grid {
+        background-color:  yellow ;
+    }
+
+
+
+}
            
     </style>
 </head>
